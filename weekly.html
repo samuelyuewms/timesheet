@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>WMS · Timesheet printing</title><style>:root{font-family:Arial,Helvetica,sans-serif;color:#182b3c;background:#f2f5f8;font-size:16px}*{box-sizing:border-box}body{margin:0}.top{background:#122b40;color:white;padding:19px 4%;display:flex;align-items:center;gap:18px;border-bottom:4px solid #28b4c7}.brand{font-size:29px;font-weight:900;letter-spacing:-1px;border-right:1px solid #587080;padding-right:20px}.top strong{font-size:16px}.top span{display:block;font-size:14px;color:#c7d7e3;margin-top:4px}main{max-width:1600px;margin:auto;padding:32px 4%}.intro{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}.eyebrow{font-size:12px;font-weight:bold;letter-spacing:1.7px;color:#317487}h1{font-size:32px;letter-spacing:-.8px;margin:8px 0 12px}p{line-height:1.5;color:#526777;margin:8px 0}.paper-label{text-align:right;font-size:14px;line-height:1.7;color:#526777}.workspace{display:grid;grid-template-columns:350px minmax(0,1fr);gap:28px}.panel{background:#fff;border:1px solid #d9e1e8;border-radius:10px;padding:22px;margin-bottom:18px}h2{font-size:18px;margin:0;display:flex;align-items:center;gap:10px}h2 b{border-radius:50%;background:#e4f3f6;color:#17677b;display:inline-grid;place-items:center;width:28px;height:28px;font-size:14px}.field{display:block;font-size:14px;font-weight:bold;margin:20px 0 10px}.week-row{display:flex;gap:8px}.week-row input{min-width:0;width:100%;font-size:16px;padding:9px;border:1px solid #aebdc8;border-radius:5px;color:#182b3c}button{font:inherit;cursor:pointer;border:1px solid #bccbd5;border-radius:6px;padding:9px 13px;background:white;color:#183d53}button:hover{background:#edf4f7}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #009aac;outline-offset:3px}button:disabled{opacity:.45;cursor:not-allowed}.primary{background:#126379;color:#fff;border-color:#126379;font-weight:bold;padding:13px 20px;white-space:nowrap}.primary:hover{background:#0c4c60}.days{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:16px}.day{display:flex;gap:8px;align-items:center;padding:9px 7px;border:1px solid #e1e7ed;border-radius:5px;font-size:14px}.day:has(input:checked){background:#eef8fa;border-color:#8cbfc8}.day span small{display:block;color:#627784;font-size:12px;margin-top:4px}input[type=checkbox]{width:18px;height:18px;accent-color:#126379;flex-shrink:0}.section-top,.select-actions{display:flex;align-items:center;justify-content:space-between;gap:8px}.text-button{font-size:14px;border:0;padding:6px 0;color:#126379;background:transparent}.select-actions{margin:15px 0 8px;border-bottom:1px solid #e3e9ee;padding-bottom:8px}.select-actions span{font-size:12px;color:#627784;margin-left:auto}.employees{display:grid;gap:1px}.employee{display:flex;gap:10px;align-items:center;font-size:14px;padding:7px 4px;border-radius:4px;cursor:pointer}.employee:hover{background:#f0f6f9}.local-note,.print-help{font-size:13px}.print-bar{display:flex;justify-content:space-between;align-items:center;gap:15px;background:#fff;border:1px solid #d9e1e8;padding:20px;border-radius:10px}.print-bar p{font-size:14px}.preview-toolbar{display:flex;justify-content:space-between;align-items:center;margin:26px 0 12px;font-size:14px}.preview-toolbar>div{display:flex;align-items:center;gap:14px}.preview{background:#dce4eb;padding:20px;border-radius:8px;overflow:auto;min-height:350px}.sheet{background:#fff;color:#000;width:100%;min-width:640px;aspect-ratio:277/190;padding:18px;font-family:Arial,sans-serif;box-shadow:0 3px 12px #172c4020}.sheet-head{border-bottom:2px solid black;padding-bottom:7px;margin-bottom:10px;display:flex;justify-content:space-between;gap:15px;align-items:center}.sheet-head h3{font-size:16px;margin:0}.sheet-head strong{font-size:18px}.identity{display:flex;justify-content:space-between;gap:20px;font-size:13px;margin-bottom:12px}.identity div{max-width:65%;overflow-wrap:anywhere}.form-body{display:grid;grid-template-columns:68% 29%;gap:3%}table{border-collapse:collapse;width:100%;font-size:10px;color:black}th,td{border:1px solid #333;padding:3px 5px;text-align:left}th{font-weight:bold;background:#ededed}.booking{table-layout:fixed}.booking td{height:16px}.booking th:nth-child(1){width:11%}.booking th:nth-child(2){width:15%}.booking th:nth-child(3){width:12%}.booking th:nth-child(4){width:37%}.booking th:nth-child(5){width:25%}.allowances{font-size:11px;padding-top:25px}.allowances h4{font-size:12px;margin:0 0 12px}.allowance{display:flex;gap:9px;margin:0 0 13px;line-height:1.35}.tick{width:13px;height:13px;border:1px solid black;flex-shrink:0}.total{font-size:12px;border:1px solid black;border-top:0;padding:6px;font-weight:bold}.notices{font-size:9px;font-weight:bold;line-height:1.5;margin:9px 0;color:black}.codes{display:grid;grid-template-columns:68% 29%;gap:3%;margin-top:9px}.codes h4{font-size:11px;margin:0 0 5px}.codes table td{padding:2px 5px}.codes p{font-size:11px;color:black;line-height:1.5;border:1px solid black;padding:12px;margin:18px 0 0}.error{color:#a52c25;font-size:14px}.empty{padding:70px 20px;text-align:center;color:#425c6d}dialog{border:0;border-radius:12px;padding:28px;width:500px;max-width:90vw;box-shadow:0 20px 70px #102c4050}dialog::backdrop{background:#102b4077}textarea{width:100%;font:inherit;border:1px solid #aebdc8;border-radius:5px;padding:12px;line-height:1.5}.dialog-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}#printPages{display:none}@media(max-width:1050px){.workspace{grid-template-columns:310px minmax(0,1fr)}.print-bar{align-items:flex-start;flex-direction:column}.paper-label{display:none}}@media(max-width:760px){main{padding:24px 16px}.workspace{grid-template-columns:1fr}.employees{grid-template-columns:1fr 1fr}.intro h1{font-size:27px}.days{grid-template-columns:repeat(2,1fr)}.preview{padding:10px}.print-bar{flex-direction:row;flex-wrap:wrap}.top{padding:16px}.top strong{font-size:14px}}@page{size:A4 landscape;margin:10mm}@media print{body{background:#fff}body>*{display:none!important}#printPages{display:block!important}.sheet{width:277mm;height:189mm;min-width:0;aspect-ratio:auto;margin:0;padding:0;box-shadow:none;break-after:page;page-break-after:always}.sheet:last-child{break-after:auto;page-break-after:auto}.sheet-head{padding-bottom:3mm;margin-bottom:3mm}.sheet-head h3{font-size:16pt}.sheet-head strong{font-size:18pt}.identity{font-size:12pt;margin-bottom:3mm}table{font-size:9pt}th,td{padding:1mm 2mm}.booking td{height:4.2mm}.allowances{font-size:10pt;padding-top:10mm}.allowances h4{font-size:11pt}.allowance{margin-bottom:4mm}.total{font-size:10pt;padding:1.5mm}.notices{font-size:8pt;margin:2.5mm 0}.codes{margin-top:2mm}.codes h4{font-size:10pt}.codes table{font-size:8.5pt}.codes table td{padding:.55mm 2mm}.codes p{font-size:10pt;margin-top:5mm}.tick{width:3.5mm;height:3.5mm}}
+.blank-preview{display:grid;place-items:center;text-align:center}.blank-preview p{max-width:360px;font-size:14px}.blank-sheet span{visibility:hidden}@media print{.blank-sheet{break-inside:avoid}}
+
+/* Keep the entire daily form in two columns on one side of A4. */
+.form-body{grid-template-columns:64% 33%;align-items:start}
+.form-sidebar{min-width:0}
+.form-sidebar .allowances{padding-top:0}
+.form-sidebar .allowance{margin-bottom:9px}
+.form-sidebar .codes{display:block;margin-top:14px}
+.form-sidebar .codes p{border:0;padding:0;margin:7px 0 0;font-size:10px}
+.form-sidebar .codes th:first-child{width:15%}
+.form-sidebar .codes table{table-layout:fixed}
+@page{size:A4 landscape;margin:0}
+@media print{
+ html,body{margin:0!important;padding:0!important}
+ .sheet{width:297mm;height:209mm;padding:10mm;break-inside:avoid;page-break-inside:avoid;overflow:visible}
+ .sheet-head{margin-bottom:3mm;padding-bottom:2mm}
+ .sheet-head h3{font-size:15pt}
+ .identity{font-size:11pt;line-height:1.2;margin-bottom:3mm}
+ .form-body{grid-template-columns:64% 33%;gap:3%}
+ .booking{font-size:9pt;line-height:1.15}
+ .booking th{padding:1.3mm 1.5mm}
+ .booking td{height:5.8mm;padding:0 1.5mm}
+ .total{font-size:10pt;padding:1.5mm}
+ .form-sidebar .allowances{padding-top:0;font-size:9pt;line-height:1.2}
+ .form-sidebar .allowances h4{font-size:10pt;margin:0 0 2mm}
+ .form-sidebar .allowance{margin:0 0 2mm;line-height:1.25}
+ .form-sidebar .codes{margin-top:4mm}
+ .form-sidebar .codes h4{font-size:10pt;margin:0 0 2mm}
+ .form-sidebar .codes table{font-size:9pt;line-height:1.15}
+ .form-sidebar .codes th,.form-sidebar .codes td{padding:1mm 1.5mm}
+ .form-sidebar .codes p{font-size:9pt;line-height:1.3;margin:2mm 0 0;padding:0}
+ .notices{font-size:8pt;line-height:1.4;margin:3mm 0 0}
+ .tick{width:3mm;height:3mm}
+}
+
+.brand img{display:block;width:190px;height:auto}
+.sheet-logo{width:180px;height:auto;object-fit:contain;flex-shrink:0}
+.identity{flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:5px}
+.identity div{max-width:100%}
+@media(max-width:760px){.brand img{width:125px}.sheet-logo{width:160px}}
+@media print{.sheet-logo{width:48mm;height:auto}.identity{gap:1.5mm}.sheet-head{min-height:12mm}}
+
+/* Weekly labour record: identical physical dimensions in preview and print. */
+.weekly.sheet{width:210mm;min-width:210mm;height:296mm;aspect-ratio:auto;padding:10mm;margin:auto;font-family:Arial,sans-serif;color:#111;font-size:8pt}
+.weekly-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1.2mm solid #f2b323;padding-bottom:3mm;margin-bottom:3mm;height:20mm}
+.weekly-head img{width:55mm;height:auto}
+.weekly-head h3{font-size:17pt;margin:0 0 2mm}
+.weekly-head p{font-size:8pt;color:#111;margin:0}
+.weekly-identity{display:grid;grid-template-columns:1fr 1fr;gap:5mm;font-size:9pt;min-height:10mm;align-items:center}
+.weekly-identity div{overflow-wrap:anywhere}
+.weekly-caption{font-size:7pt;color:#111;margin:1mm 0 3mm}
+.weekly-booking{table-layout:fixed;font-size:8pt}
+.weekly-booking th{height:8mm;background:#f5e4b8;padding:1mm 2mm}
+.weekly-booking td{height:5.35mm;padding:0 2mm}
+.weekly-booking th,.weekly-booking td{border:.2mm solid #555}
+.weekly-booking .weekday{background:#f5f5f3;vertical-align:top;padding-top:5mm}
+.weekday small{display:block;font-size:7pt;margin-top:2mm}
+.weekly-totals{display:flex;justify-content:space-between;align-items:center;gap:3mm;margin:3mm 0;font-size:7pt}
+.weekly-totals b{font-size:8pt;white-space:nowrap}
+.weekly-section{background:#f5f5f3;font-size:8pt;margin:3mm 0 2mm;padding:1.5mm 2mm}
+.weekly-section span{font-weight:normal;font-size:7pt;margin-left:6mm}
+.weekly-claims{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm 3mm;font-size:7pt}
+.weekly-claims>div{display:flex;gap:1.5mm}
+.weekly-claims i{display:block;border:.2mm solid #333;width:2.5mm;height:2.5mm;flex-shrink:0}
+.weekly-claims small{display:block;font-size:6pt;margin-top:1mm}
+.weekly-codes{display:grid;grid-template-columns:1fr 1fr;gap:1.3mm 4mm;font-size:7pt}
+.weekly-notices{border-top:.2mm solid #555;margin-top:3mm;padding-top:2mm;font-size:6.5pt;font-weight:bold;line-height:1.5}
+.weekly-footer{display:flex;justify-content:space-between;margin-top:3mm;font-size:6pt}
+@page{size:A4 portrait;margin:0}
+@media print{
+ .weekly.sheet{width:210mm;min-width:0;height:296mm;padding:10mm;margin:0;box-shadow:none;break-after:page;break-inside:avoid;page-break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .weekly.sheet:last-child{break-after:auto;page-break-after:auto}
+}
+
+/* Keep the complete five-day form within the 276 mm printable content height. */
+.weekly-head{height:18mm;margin-bottom:2mm;padding-bottom:2mm}
+.weekly-identity{min-height:7mm;font-size:8.5pt}
+.weekly-caption{line-height:3mm;margin:0 0 2mm}
+.weekly-totals{line-height:3mm;margin:2mm 0}
+.weekly-section{line-height:3mm;padding:1mm 2mm;margin:1mm 0}
+.weekly-claims{line-height:3mm;gap:1mm 3mm}
+.weekly-claims small{line-height:2mm;margin-top:1mm}
+.weekly-codes{line-height:3mm;gap:.3mm 4mm}
+.weekly-notices{margin-top:2mm;padding-top:1mm;line-height:3mm}
+.weekly-footer{margin-top:2mm;line-height:2mm}
+</style></head>
+<body><header class="top"><div class="brand"><img src="wms-logo.png" alt="WMS Waites Mechanical Services"></div><div><strong>Waites Mechanical Services</strong><span>ONE WEEK PER PAGE · Weekly edition</span></div></header>
+<main><div class="intro"><div><p class="eyebrow">PRODUCTION / PRINTING</p><h1>Print one week per page</h1><p>Choose your team and dates. Print five days on one sheet per employee, with six entries per day.</p></div><div class="paper-label">A4 portrait<br><strong>Single-sided · Grouped by employee</strong></div></div>
+<div class="workspace"><aside><section class="panel"><h2><b>1</b> Week & days</h2><label class="field" for="week">Week commencing (Monday)</label><div class="week-row"><button id="previous" aria-label="Previous week">‹</button><input id="week" type="date" min="1900-01-01" max="9998-12-31"><button id="next" aria-label="Next week">›</button></div><p id="dateError" class="error" role="alert"></p><div id="days" class="days"></div></section>
+<section class="panel"><div class="section-top"><h2><b>2</b> Employees</h2><button id="manage" class="text-button">Edit list</button></div><div class="select-actions"><button id="all" class="text-button">Select all</button><button id="none" class="text-button">Clear</button><span id="selectedCount"></span></div><div id="employees" class="employees"></div></section><p class="local-note">The employee list is shared with everyone. Your week, days and employee selections are saved in this browser. Changes do not update Excel.</p><p id="sharedStatus" class="local-note" role="status">Loading the shared employee list…</p><button id="retryShared" class="text-button">Check for updates</button><p id="storageError" class="error" role="status"></p></aside>
+<section class="preview-area"><div class="print-bar"><div><h2 id="summary" aria-live="polite"></h2><p id="summaryDetail"></p></div><button id="print" class="primary">Print everyone selected</button></div><p class="print-help">Choose your printer, A4 portrait, one page per sheet, and Print on one side (single-sided). Turn off headers and footers. Each employee’s selected weekdays fit on one sheet with six entries per day. Selecting more than five days adds a second sheet. Print at 100% / Actual size.</p><div class="preview-toolbar"><strong>Print preview</strong><div><button id="back" aria-label="Previous page">‹</button><span id="pageNumber" aria-live="polite"></span><button id="forward" aria-label="Next page">›</button></div></div><div id="preview" class="preview"></div></section></div></main>
+<dialog id="editor"><form id="editForm"><h2>Employee list</h2><p>Enter one name per line. Saving updates the list for everyone. Unticking someone on the main screen changes only your print selection.</p><label class="field" for="names">Names</label><textarea id="names" rows="14" required></textarea><p id="editError" class="error" role="alert"></p><div class="dialog-actions"><button id="cancel" type="button">Cancel</button><button class="primary" type="submit">Save list</button></div></form></dialog><div id="printPages"></div><script>'use strict';
+const DEFAULT_NAMES=[];
+const KEY='wms-timesheet-printer-v1';
+const $=id=>document.getElementById(id);
+const escapeHTML=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function parseDate(value){if(!/^\d{4}-\d{2}-\d{2}$/.test(value))return null;const d=new Date(value+'T12:00:00');return Number.isNaN(d.getTime())||dateISO(d)!==value?null:d;}
+function dateISO(d){return `${String(d.getFullYear()).padStart(4,'0')}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;}
+function addDays(value,n){const d=parseDate(value);if(!d)return '';d.setDate(d.getDate()+n);return dateISO(d);}
+function monday(){const d=new Date();d.setDate(d.getDate()-(d.getDay()+6)%7);return dateISO(d);}
+function format(value,options){return parseDate(value).toLocaleDateString('en-GB',options);}
+let state={names:[...DEFAULT_NAMES],selected:[...DEFAULT_NAMES],days:[0,1,2,3,4],week:monday()};
+try{const saved=JSON.parse(localStorage.getItem(KEY));if(saved&&Array.isArray(saved.names)&&saved.names.length&&saved.names.every(n=>typeof n==='string'&&n.trim()&&n.length<=100)&&Array.isArray(saved.selected)&&Array.isArray(saved.days)){state={names:[...new Set(saved.names)],selected:saved.selected.filter(n=>saved.names.includes(n)),days:[...new Set(saved.days.filter(n=>Number.isInteger(n)&&n>=0&&n<7))],week:parseDate(saved.week)?saved.week:monday()};}}catch{}
+let page=0;
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));$('storageError').textContent='';}catch{$('storageError').textContent='This browser could not save your choices. You can still print during this session.';}}
+function jobs(){const d=parseDate(state.week);if(!d||d.getDay()!==1||state.week<'1900-01-01'||state.week>'9998-12-31')return [];return state.names.filter(n=>state.selected.includes(n)).flatMap(name=>[...state.days].sort((a,b)=>a-b).map(day=>({name,date:addDays(state.week,day)})));}
+// Print continuously in employee/date order without separator pages.
+function printBatch(){
+ const grouped=new Map();
+ for(const job of jobs()){if(!grouped.has(job.name))grouped.set(job.name,[]);grouped.get(job.name).push(job);}
+ return [...grouped].flatMap(([name,days])=>{const pages=[];for(let i=0;i<days.length;i+=5)pages.push({name,days:days.slice(i,i+5)});return pages;});
+}
+function printHTML(job){return formHTML(job);}
+function previewHTML(job){return formHTML(job);}
+const codes=[['RW','Reworks'],['L','Loading/Unloading vans for site'],['AM','Awaiting material'],['N','No work allocated'],['T','Training/meetings'],['S','Stores tasks'],['M','Maintenance'],['E','Equipment/tools'],['B1','Morning break'],['B2','Afternoon break']];
+function formHTML(job){
+ const rows=job.days.map(day=>Array.from({length:6},(_,i)=>`<tr>${i===0?`<td class="weekday" rowspan="6"><b>${format(day.date,{weekday:'long'})}</b><small>${format(day.date,{day:'2-digit',month:'short',year:'numeric'})}</small></td>`:''}<td></td><td></td><td></td><td></td><td></td>${i===0?'<td rowspan="6"></td>':''}</tr>`).join('')).join('');
+ return `<article class="sheet weekly"><header class="weekly-head"><img src="wms-logo.png" alt="WMS Waites Mechanical Services"><div><h3>WEEKLY TIMESHEET</h3><p>Production labour booking</p></div></header><div class="weekly-identity"><div><b>Name:</b> ${escapeHTML(job.name)}</div><div><b>Week commencing:</b> ${format(state.week,{day:'2-digit',month:'long',year:'numeric'})}</div></div><p class="weekly-caption">SIX ENTRIES PER DAY · ${job.days.length} SELECTED DAYS</p><table class="weekly-booking"><colgroup><col style="width:13%"><col style="width:11%"><col style="width:11%"><col style="width:9%"><col style="width:36%"><col style="width:10%"><col style="width:10%"></colgroup><thead><tr><th>Day / date</th><th>Start</th><th>Finish</th><th>Code</th><th>Project number</th><th>W / S</th><th>Daily hrs</th></tr></thead><tbody>${rows}</tbody></table><div class="weekly-totals"><span>W = Workshop &nbsp; S = Site · Include the project number for every job.</span><b>${printBatch().filter(p=>p.name===job.name).length>1?'Page':'Weekly'} hours: __________</b></div><h4 class="weekly-section">ALLOWANCES / CLAIMS <span>Tick and write the day(s); attach receipts for company purchases.</span></h4><div class="weekly-claims">${['Weld hire','Mileage (own vehicle)','Travel','Overnight meal - abroad','Overnight meal - UK','Company purchases'].map(t=>`<div><i></i><span>${t}<small>Day(s): __________________</small></span></div>`).join('')}</div><h4 class="weekly-section">BOOKING CODES</h4><div class="weekly-codes">${codes.map(([code,desc])=>`<div><b>${code}</b> - ${desc}</div>`).join('')}</div><div class="weekly-notices">ALL BREAKS MUST BE TAKEN - ANYONE WHO WORKS THROUGH THEIR BREAKS WILL NOT BE PAID FOR IT<br>ALL SUBCONTRACTORS MUST SEND RACHEL THEIR TIMESHEET NO LATER THAN 10AM MONDAY</div><footer class="weekly-footer"><span>WMS | Weekly labour record</span><span>A4 portrait | Print at actual size</span></footer></article>`;
+}
+function renderEmployees(){$('employees').innerHTML=state.names.map((name,i)=>`<label class="employee"><input type="checkbox" data-employee="${i}" ${state.selected.includes(name)?'checked':''}><span>${escapeHTML(name)}</span></label>`).join('');}
+function renderDays(){const valid=parseDate(state.week);$('days').innerHTML=['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'].map((name,i)=>`<label class="day"><input type="checkbox" data-day="${i}" ${state.days.includes(i)?'checked':''}><span>${name}<small>${valid?format(addDays(state.week,i),{day:'2-digit',month:'short'}):'Choose a week'}</small></span></label>`).join('');}
+function render(){const forms=jobs();const batch=printBatch();page=Math.max(0,Math.min(page,batch.length-1));$('selectedCount').textContent=`${state.selected.length} of ${state.names.length}`;$('summary').textContent=`${batch.length} weekly timesheet${batch.length===1?'':'s'} · ${batch.length} sheet${batch.length===1?'':'s'} single-sided`;$('summaryDetail').textContent=`${state.selected.length} employees × ${state.days.length} days · 6 entries per day · Up to 5 days per sheet`;$('print').disabled=!batch.length;$('back').disabled=page===0||!batch.length;$('forward').disabled=page>=batch.length-1;$('pageNumber').textContent=batch.length?`${page+1} / ${batch.length}`:'0 / 0';$('dateError').textContent=!parseDate(state.week)?'Choose a valid week start date.':parseDate(state.week).getDay()!==1?'Choose a Monday for the start of the week.':'';$('preview').innerHTML=batch.length?previewHTML(batch[page]):'<div class="empty">Choose a Monday, at least one employee, and at least one day to preview your timesheets.</div>';}
+function changed(){page=0;save();render();}
+$('week').value=state.week;renderDays();renderEmployees();render();
+$('employees').addEventListener('change',e=>{if(!e.target.matches('[data-employee]'))return;const name=state.names[Number(e.target.dataset.employee)];state.selected=e.target.checked?[...new Set([...state.selected,name])]:state.selected.filter(n=>n!==name);changed();});
+$('days').addEventListener('change',e=>{if(!e.target.matches('[data-day]'))return;const day=Number(e.target.dataset.day);state.days=e.target.checked?[...new Set([...state.days,day])]:state.days.filter(n=>n!==day);changed();});
+$('week').addEventListener('change',()=>{state.week=$('week').value;renderDays();changed();});
+function moveWeek(n){const next=addDays(state.week,n);if(!parseDate(next)||next<'1900-01-01'||next>'9998-12-31')return;state.week=next;$('week').value=state.week;renderDays();changed();}
+$('previous').onclick=()=>moveWeek(-7);$('next').onclick=()=>moveWeek(7);
+$('all').onclick=()=>{state.selected=[...state.names];renderEmployees();changed();};$('none').onclick=()=>{state.selected=[];renderEmployees();changed();};
+$('back').onclick=()=>{page--;render();};$('forward').onclick=()=>{page++;render();};
+window.addEventListener('beforeprint',()=>{$('printPages').innerHTML=printBatch().map(printHTML).join('');});
+window.addEventListener('afterprint',()=>{$('printPages').innerHTML='';});
+$('print').onclick=()=>{if(!jobs().length)return;$('printPages').innerHTML=printBatch().map(printHTML).join('');window.print();};
+$('manage').onclick=()=>{$('names').value=state.names.join('\n');$('editError').textContent='';$('editor').showModal();};$('cancel').onclick=()=>$('editor').close();
+$('editForm').onsubmit=e=>{e.preventDefault();const names=$('names').value.split(/\r?\n/).map(n=>n.trim()).filter(Boolean);if(!names.length||names.length>250||names.some(n=>n.length>100)){$('editError').textContent='Enter 1–250 names, each no longer than 100 characters.';return;}if(new Set(names.map(n=>n.toLowerCase())).size!==names.length){$('editError').textContent='Each name must be unique. Please remove duplicates.';return;}state.selected=names.filter(n=>state.selected.includes(n)||!state.names.includes(n));state.names=names;renderEmployees();changed();$('editor').close();};
+</script><script src="shared-config.js"></script><script src="shared.js"></script></body></html>
+
