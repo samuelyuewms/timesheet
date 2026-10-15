@@ -40,3 +40,47 @@
 .identity div{max-width:100%}
 @media(max-width:760px){.brand img{width:125px}.sheet-logo{width:160px}}
 @media print{.sheet-logo{width:48mm;height:auto}.identity{gap:1.5mm}.sheet-head{min-height:12mm}}
+
+/* Weekly labour record: identical physical dimensions in preview and print. */
+.weekly.sheet{width:210mm;min-width:210mm;height:296mm;aspect-ratio:auto;padding:10mm;margin:auto;font-family:Arial,sans-serif;color:#111;font-size:8pt}
+.weekly-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1.2mm solid #f2b323;padding-bottom:3mm;margin-bottom:3mm;height:20mm}
+.weekly-head img{width:55mm;height:auto}
+.weekly-head h3{font-size:17pt;margin:0 0 2mm}
+.weekly-head p{font-size:8pt;color:#111;margin:0}
+.weekly-identity{display:grid;grid-template-columns:1fr 1fr;gap:5mm;font-size:9pt;min-height:10mm;align-items:center}
+.weekly-identity div{overflow-wrap:anywhere}
+.weekly-caption{font-size:7pt;color:#111;margin:1mm 0 3mm}
+.weekly-booking{table-layout:fixed;font-size:8pt}
+.weekly-booking th{height:8mm;background:#f5e4b8;padding:1mm 2mm}
+.weekly-booking td{height:5.35mm;padding:0 2mm}
+.weekly-booking th,.weekly-booking td{border:.2mm solid #555}
+.weekly-booking .weekday{background:#f5f5f3;vertical-align:top;padding-top:5mm}
+.weekday small{display:block;font-size:7pt;margin-top:2mm}
+.weekly-totals{display:flex;justify-content:space-between;align-items:center;gap:3mm;margin:3mm 0;font-size:7pt}
+.weekly-totals b{font-size:8pt;white-space:nowrap}
+.weekly-section{background:#f5f5f3;font-size:8pt;margin:3mm 0 2mm;padding:1.5mm 2mm}
+.weekly-section span{font-weight:normal;font-size:7pt;margin-left:6mm}
+.weekly-claims{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm 3mm;font-size:7pt}
+.weekly-claims>div{display:flex;gap:1.5mm}
+.weekly-claims i{display:block;border:.2mm solid #333;width:2.5mm;height:2.5mm;flex-shrink:0}
+.weekly-claims small{display:block;font-size:6pt;margin-top:1mm}
+.weekly-codes{display:grid;grid-template-columns:1fr 1fr;gap:1.3mm 4mm;font-size:7pt}
+.weekly-notices{border-top:.2mm solid #555;margin-top:3mm;padding-top:2mm;font-size:6.5pt;font-weight:bold;line-height:1.5}
+.weekly-footer{display:flex;justify-content:space-between;margin-top:3mm;font-size:6pt}
+@page{size:A4 portrait;margin:0}
+@media print{
+ .weekly.sheet{width:210mm;min-width:0;height:296mm;padding:10mm;margin:0;box-shadow:none;break-after:page;break-inside:avoid;page-break-inside:avoid;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .weekly.sheet:last-child{break-after:auto;page-break-after:auto}
+}
+
+/* Keep the complete five-day form within the 276 mm printable content height. */
+.weekly-head{height:18mm;margin-bottom:2mm;padding-bottom:2mm}
+.weekly-identity{min-height:7mm;font-size:8.5pt}
+.weekly-caption{line-height:3mm;margin:0 0 2mm}
+.weekly-totals{line-height:3mm;margin:2mm 0}
+.weekly-section{line-height:3mm;padding:1mm 2mm;margin:1mm 0}
+.weekly-claims{line-height:3mm;gap:1mm 3mm}
+.weekly-claims small{line-height:2mm;margin-top:1mm}
+.weekly-codes{line-height:3mm;gap:.3mm 4mm}
+.weekly-notices{margin-top:2mm;padding-top:1mm;line-height:3mm}
+.weekly-footer{margin-top:2mm;line-height:2mm}
