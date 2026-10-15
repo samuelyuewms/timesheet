@@ -84,3 +84,23 @@
 .weekly-codes{line-height:3mm;gap:.3mm 4mm}
 .weekly-notices{margin-top:2mm;padding-top:1mm;line-height:3mm}
 .weekly-footer{margin-top:2mm;line-height:2mm}
+
+/* Full-page A4 edition: 6 mm margins and larger handwriting rows. */
+.weekly.sheet{padding:6mm;height:296mm}
+.weekly-booking{font-size:9pt}
+.weekly-booking th{font-size:9pt;height:8mm;padding:1mm 1.5mm}
+.weekly-booking td{height:5.8mm}
+.weekly-booking .weekday{font-size:9pt}
+.weekday small{font-size:8pt}
+.weekly-identity{font-size:10pt;min-height:8mm}
+.weekly-head h3{font-size:18pt}
+.weekly-head p,.weekly-caption{font-size:8pt}
+.weekly-totals,.weekly-totals b{font-size:8pt}
+.weekly-section{font-size:9pt}
+.weekly-section span{font-size:7.5pt;margin-left:4mm}
+.weekly-claims{font-size:8pt;line-height:3.3mm}
+.weekly-claims small{font-size:7pt;line-height:2.5mm}
+.weekly-codes{font-size:8pt;line-height:3.3mm}
+.weekly-notices{font-size:7pt;line-height:3.2mm}
+.weekly-footer{font-size:7pt}
+@media print{.weekly.sheet{padding:6mm;height:296mm}}
