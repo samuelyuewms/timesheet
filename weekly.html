@@ -154,7 +154,7 @@ function printBatch(){
 }
 function printHTML(job){return formHTML(job);}
 function previewHTML(job){return formHTML(job);}
-const codes=[['RW','Reworks'],['L','Loading/Unloading vans for site'],['AM','Awaiting material'],['N','No work allocated'],['T','Training/meetings'],['S','Stores tasks'],['M','Maintenance'],['E','Equipment/tools'],['B1','Morning break'],['B2','Afternoon break']];
+const codes=[['RW','Reworks'],['L','Loading/Unloading vans for site'],['AM','Awaiting material'],['N','No work allocated'],['T','Training/meetings'],['S','Stores tasks'],['M','Maintenance'],['E','Equipment/tools']];
 function dayTable(day){
  const rows=Array.from({length:10},()=>'<tr><td></td><td></td><td></td><td></td><td></td></tr>').join('');
  return `<section class="day-block"><h4>${format(day.date,{weekday:'long'})}<span>${format(day.date,{day:'2-digit',month:'short'})}</span></h4><table class="weekly-booking"><colgroup><col style="width:18%"><col style="width:18%"><col style="width:12%"><col style="width:40%"><col style="width:12%"></colgroup><thead><tr><th>Start</th><th>Finish</th><th>Code</th><th>Project no.</th><th>W/S</th></tr></thead><tbody>${rows}</tbody></table><div class="day-total">Daily hours: __________</div></section>`;
